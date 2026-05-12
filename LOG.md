@@ -18,9 +18,13 @@ This log tracks weekly progress, key decisions, issues encountered, and the indi
 * **Key Decisions:** Explicitly excluded Gaussian Blur from the default pipeline for CIFAR-10, aligning with the SimCLR paper's appendix recommendations for small-resolution images.
 * **Issues Encountered:** Needed to ensure that the augmentation pipeline generates two *independent* views for the exact same image in a single pass; built a custom Dataset wrapper `SimCLRDataset` to handle returning tuples of augmented images.
 * **Key Commits:**
-  * `[Insert-Commit-Hash-Here]` - Added base CIFAR-10 dataset downloader and loader.
-  * `[Insert-Commit-Hash-Here]` - Implemented dual-view stochastic augmentation pipeline.
-
+  * `[49c97c1193f9d633fdd8c1966d1836c4f709232b]` - Add file : Add YAML config for augmentation hyperparameters and normalization stats.
+  * `[82c6360487e224526fababd685b2f3a916c2240f]` - feat(data): setup augmentation configs and core SimCLR view generator class
+  * `[47d67f65c8476f43fee994e11202dce16444f3ca]` - feat(data): implement baseline spatial augmentations [ Exp 1 and 2 ]
+  * `[83fed8aee4ea78bdceac1d6bb35cded765f64737]` - feat(data): integrate photometric distortions and hybrid pipelines [ Exp 3-6 ]
+  * `[518d35e4e0a528a4755872fb2a2063028e2bdf1c]` - feat(data): finalize comprehensive contrastive augmentation suite [ Exp 7-8 ]
+  * `[c509405245433993e3d5b3f38ba7959ba3fa9573]` - feat(data): create Custom AugmentedDataset wrapper and initialize dataloaders
+  * `[d73db8faf5eae69ce7d5a5db69035473099d371a]` - chore(vis): add Jupyter notebook for qualitative visualization of augmentation experiments
 ---
 
 ### 👨‍💻 Mahmoud Alyosify (Contrastive Learning Framework Lead)
@@ -28,8 +32,9 @@ This log tracks weekly progress, key decisions, issues encountered, and the indi
 * **Key Decisions:** Set NT-Xent temperature parameter $\tau=0.5$ based on optimal CIFAR-10 settings from the original paper. Used a smaller batch size temporarily for local testing before scaling to the RTX 5000 Ada GPU.
 * **Issues Encountered:** Implementing the NT-Xent mask to exclude self-similarity correctly required careful handling of matrix operations; resolved using `torch.eye` as a boolean mask.
 * **Key Commits:**
-  * `[Insert-Commit-Hash-Here]` - Implemented SimCLR modified ResNet-50 encoder and MLP projection head.
-  * `[Insert-Commit-Hash-Here]` - Added NT-Xent loss function and preliminary training loop.
+  * `a2410aa7e0271425374f452171dffdd8a4948007` - feat(model): modify ResNet-50 stem for 32x32 (CIFAR-10) images and implement 2-layer MLP projection head
+  * `13c987f05627ad0702220c4574ade70ee7d87a4f` - feat(loss): implement NT-Xent loss function with temperature scaling and self-similarity masking
+  * `b051778e7beb454c3915af5dbe3696430a588e08` - feat(train): build SimCLR contrastive training loop and logging setup
 
 ---
 ### 👩‍💻 Mirna Imbabi (Linear Evaluation & Reporting Lead)
