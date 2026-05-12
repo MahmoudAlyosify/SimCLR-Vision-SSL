@@ -87,7 +87,7 @@ SimCLR model using ResNet-50 as the encoder backbone.
 
 
 
-#  Unit Test
+#  Unit Test to test my work with the SimCLR_ResNet50 
 if __name__ == "__main__":
     print("=" * 55)
     print("  SimCLR ResNet-50 — Unit Test")
