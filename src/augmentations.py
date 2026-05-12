@@ -32,3 +32,19 @@ class SimCLRViewGenerator(object):
         return [self.base_transform(x) for i in range(self.n_views)]
 
 
+
+# EXPERIMENT 1 — Random Resized Crop (Crop + Resize)
+transform_exp1 = T.Compose([
+    T.RandomResizedCrop(32, scale=(0.2, 1.0)), 
+    T.ToTensor(),
+    T.Normalize(CIFAR_MEAN, CIFAR_STD)
+])
+
+# EXP 2 — Crop + Flip
+transform_exp2 = T.Compose([
+    T.RandomResizedCrop(32, scale=(0.2, 1.0)),
+    T.RandomHorizontalFlip(),
+    T.ToTensor(),
+    T.Normalize(CIFAR_MEAN, CIFAR_STD)
+])
+
