@@ -43,6 +43,9 @@ This log tracks weekly progress, key decisions, issues encountered, and the indi
 * **Key Decisions:** Designed the linear probe to strictly freeze the encoder (0 gradients propagated) to genuinely evaluate the representation quality without fine-tuning cheating.
 * **Issues Encountered:** Managing Jupyter Notebook evaluation paths to dynamically locate the pre-trained checkpoints from the automated ablation outputs (`exp_8/checkpoints/simclr_epoch_020.pth`); resolved by writing a dynamic repository root locator.
 * **Key Commits:**
+  * `[9960f373906ae6c56033335344129a221f7be380]` - Baseline added.
+  * `[9036e4acf736f8e3a30f30c20881dfb323ef3899]` - bug fixes.
+  * `[61fec6124907426f2e1f7684f6d5d7c42979962c]` - bug fixes.
   * `[2d5d43af5230bc26f20bb9ac173b39d030da21c0]` - Implement baseline.
   * `[f44c6720ff05bcf30280dfe6c5ca4861b065f349]` - Implement supervised baseline and linear probe evaluation.
   * `[e774bff9e38d7213e8175c3e85a96dcb2f1bae09]` - Add linear probe training and evaluation.
