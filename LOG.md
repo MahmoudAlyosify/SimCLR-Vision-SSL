@@ -27,7 +27,12 @@ This log tracks weekly progress, key decisions, issues encountered, and the indi
   * `a2410aa7e0271425374f452171dffdd8a4948007` - feat(model): modify ResNet-18/50 stems for 32x32 images and implement MLP projection heads
   * `13c987f05627ad0702220c4574ade70ee7d87a4f` - feat(loss): implement NT-Xent loss function with temperature scaling and self-similarity masking
   * `b051778e7beb454c3915af5dbe3696430a588e08` - feat(train): build SimCLR contrastive training loop and logging setup
-  * `[Insert-Commit-Hash-Here]` - fix(env): add automated ablation script and fix CUDA environment
+  * `[6efe1f5d4462698599667fd375ba30a30fbb40c4]` - feat(loss): implement NT-Xent loss function with temperature scaling and self-similarity masking
+  * `[849cab84157c9f1fa84d613e4ac48a30edb8bd40]` - Modify: Natalie file and add the "AugmentedDataset" function or Custom SimCLR Dataset Wrapper, and perform an Experiment Registry.
+  * `[860fb9f84665e7edb2f782d965ae447f3e21829a]` - Update augmentations.py
+  * `[3ccb0f02b10a4c8882e8c0e3d8fa6ef66c7ce290]` - Revise README for clarity and updated information
+  * `[19685806ffabd7ef3ea403c94f5a5496e100bf5d]` - add: Our model output for the 8 experiment
+    
 
 ---
 
