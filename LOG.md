@@ -30,8 +30,6 @@ This log tracks weekly progress, key decisions, issues encountered, and the indi
   * `[71edb77d6f265b8a3f1b102b9c1ea60caf2d7a77]` - Add: Python script code to perform training on the 8 experiments and output the graphs.
   * `[cc24c17484b47c13c0dcfa0f45c75b4e1473c883]` - feat(train): build SimCLR contrastive training loop and logging setup for work in 8 Experiments
   * `[6efe1f5d4462698599667fd375ba30a30fbb40c4]` - feat(loss): implement NT-Xent loss function with temperature scaling and self-similarity masking
-  * `[849cab84157c9f1fa84d613e4ac48a30edb8bd40]` - Modify: Natalie file and add the "AugmentedDataset" function or Custom SimCLR Dataset Wrapper, and perform an Experiment
-  * `[860fb9f84665e7edb2f782d965ae447f3e21829a]` - Update augmentations.py
   * `[19685806ffabd7ef3ea403c94f5a5496e100bf5d]` - add: Our model output for the 8 experiment
   Registry.
  
