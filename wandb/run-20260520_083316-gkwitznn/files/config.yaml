@@ -1,0 +1,109 @@
+_wandb:
+    value:
+        cli_version: 0.27.0
+        e:
+            ndr24e3ki4913fipyd1nl6fr7u1361p7:
+                codePath: sync_to_wandb.py
+                codePathLocal: sync_to_wandb.py
+                cpu_count: 20
+                cpu_count_logical: 28
+                cudaVersion: "13.2"
+                disk:
+                    /:
+                        total: "371040710656"
+                        used: "78847787008"
+                email: mahmoudalyosify@gmail.com
+                executable: C:\Users\MahmoudAlyosify\AppData\Local\Programs\Python\Python311\python.exe
+                gpu: NVIDIA RTX 5000 Ada Generation
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 12800
+                      memoryTotal: "34351349760"
+                      name: NVIDIA RTX 5000 Ada Generation
+                      uuid: GPU-841b198d-4174-febc-9c95-d4c57d2bec80
+                host: L09P18
+                memory:
+                    total: "34050842624"
+                os: Windows-10-10.0.26100-SP0
+                program: D:\Deep Learning Project\Working in the Project Mahmoud\Final\SimCLR-Vision-SSL\sync_to_wandb.py
+                python: CPython 3.11.9
+                root: D:\Deep Learning Project\Working in the Project Mahmoud\Final\SimCLR-Vision-SSL
+                startedAt: "2026-05-20T06:33:16.246951Z"
+                writerId: ndr24e3ki4913fipyd1nl6fr7u1361p7
+        m: []
+        python_version: 3.11.9
+        t:
+            "3":
+                - 2
+                - 13
+                - 15
+                - 16
+                - 61
+                - 62
+            "4": 3.11.9
+            "5": 0.27.0
+            "8":
+                - 3
+            "10":
+                - 20
+            "12": 0.27.0
+            "13": windows-amd64
+aug_name:
+    value: null
+auto_lr:
+    value: true
+backbone:
+    value: resnet50
+base_accuracy_no_jitter:
+    value: 66.27
+batch_size:
+    value: 512
+data_dir:
+    value: ./data
+epochs:
+    value: 200
+exp_id:
+    value: 42
+experiment_id:
+    value: 42
+has_color_jitter:
+    value: true
+jitter_gain_pp:
+    value: 14.939999999999998
+label_fraction:
+    value: 0.1
+loss:
+    value: ntxent
+lr:
+    value: 0.03
+no_compile:
+    value: true
+num_workers:
+    value: 4
+optimizer:
+    value: adamw
+output_dir:
+    value: ./outputs
+pipeline:
+    value: v13_cutout_jitter_exp42
+probe_accuracy:
+    value: 81.21
+projection_dim:
+    value: 128
+resume:
+    value: null
+run_all_ablations:
+    value: false
+save_every:
+    value: 50
+seed:
+    value: 42
+temperature:
+    value: 0.5
+tsne_final_only:
+    value: true
+warmup_epochs:
+    value: 10
+weight_decay:
+    value: 0.0001

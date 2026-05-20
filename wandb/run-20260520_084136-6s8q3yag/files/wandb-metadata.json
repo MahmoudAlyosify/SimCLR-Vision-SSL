@@ -1,0 +1,36 @@
+{
+  "os": "Windows-10-10.0.26100-SP0",
+  "python": "CPython 3.11.9",
+  "startedAt": "2026-05-20T06:41:36.654276Z",
+  "program": "D:\\Deep Learning Project\\Working in the Project Mahmoud\\Final\\SimCLR-Vision-SSL\\sync_to_wandb.py",
+  "codePath": "sync_to_wandb.py",
+  "codePathLocal": "sync_to_wandb.py",
+  "email": "mahmoudalyosify@gmail.com",
+  "root": "D:\\Deep Learning Project\\Working in the Project Mahmoud\\Final\\SimCLR-Vision-SSL",
+  "host": "L09P18",
+  "executable": "C:\\Users\\MahmoudAlyosify\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+  "cpu_count": 20,
+  "cpu_count_logical": 28,
+  "gpu": "NVIDIA RTX 5000 Ada Generation",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "371040710656",
+      "used": "78849462272"
+    }
+  },
+  "memory": {
+    "total": "34050842624"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA RTX 5000 Ada Generation",
+      "memoryTotal": "34351349760",
+      "cudaCores": 12800,
+      "architecture": "Ada",
+      "uuid": "GPU-841b198d-4174-febc-9c95-d4c57d2bec80"
+    }
+  ],
+  "cudaVersion": "13.2",
+  "writerId": "7817bbibbfzvevg3wam4tl79lbqici6o"
+}
