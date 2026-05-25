@@ -1,37 +1,41 @@
 # SimCLR-Vision-SSL 🔍
 
-> Self-Supervised Contrastive Learning & Supervised Contrastive Learning (SupCon) for Visual Representations  
-> A research-level implementation of SimCLR and SupCon with extensive color-jitter ablations, linear evaluation, and a real-time visual similarity search engine on CIFAR-10.
+> **Self-Supervised & Semi-Supervised Contrastive Learning for Visual Representations** > A research-grade implementation of SimCLR and SupCon with 42-experiment augmentation ablations, shortcut-learning analysis, linear evaluation protocol, and a live real-time visual similarity search engine on CIFAR-10.
 
-![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.5+-ee4c2c?logo=pytorch)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-Final%20Completed-success)
-![Course](https://img.shields.io/badge/CISC_867-Group_20-blueviolet)
+[![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://python.org)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.5+-ee4c2c?logo=pytorch)](https://pytorch.org)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Final%20Completed-success)]()
+[![Course](https://img.shields.io/badge/CISC_867-Group_20-blueviolet)]()
+[![HuggingFace](https://img.shields.io/badge/🤗%20Live%20Demo-Hugging%20Face%20Spaces-yellow)](https://huggingface.co/spaces/mahmoudalyosify/SimCLR-Visual-Search-Engine)
+[![W&B](https://img.shields.io/badge/Experiment%20Tracking-W%26B-orange)](https://wandb.ai/mahmoudalyosify/SimCLR-Vision-SSL/workspace)
 
 ---
 
-## Overview
+##  Live Demo
+
+**Try the visual search engine live — no installation required:**
+>  **[https://huggingface.co/spaces/mahmoudalyosify/SimCLR-Visual-Search-Engine](https://huggingface.co/spaces/mahmoudalyosify/SimCLR-Visual-Search-Engine)**
+
+Upload any image or pick a random CIFAR-10 test image and retrieve the 5 most semantically similar images in **< 5 ms** using our ONNX-exported ResNet-50 encoder + FAISS index.
+
+---
+
+## 📖 Overview
 
 This repository implements **SimCLR** ([Chen et al., ICML 2020](https://arxiv.org/abs/2002.05709)) and **Supervised Contrastive Learning (SupCon)** ([Khosla et al., NeurIPS 2020](https://arxiv.org/abs/2004.11362)) — powerful frameworks for self-supervised and semi-supervised visual representation learning — tailored and optimized for CIFAR-10.
 
 **Key Implementations:**
-- ✅ **Color-Jitter Ablation Study:** A thorough analysis of 5 final 200-epoch ResNet-50 experiments (Exp 38–42) to solve the "Shortcut Learning" problem where the encoder exploits low-level color histograms instead of learning invariant semantic features.
-- ✅ **Architecture:** ResNet-50 modified with a custom small-image stem (conv1 $3\times3$, stride 1, padding 1, and no max-pooling) to preserve spatial features for $32\times32$ CIFAR-10 images.
-- ✅ **Contrastive Frameworks:** 
-  - *Unsupervised (SimCLR):* Two-layer MLP projection head + NT-Xent loss with temperature scaling ($\tau = 0.5$).
-  - *Semi-supervised (SupCon - Bonus #4):* Pretraining with Supervised Contrastive Loss ($\tau = 0.1$) on a 10% stratified subset (5,000 labeled samples) of CIFAR-10.
-- ✅ **Real-Time Visual Search Engine:** PyTorch ResNet-50 weights exported to an optimized **ONNX** inference session (with dynamic batching) paired with a **FAISS (IndexFlatIP)** vector database for exact sub-millisecond similarity retrieval.
-- ✅ **Premium Web GUI:** Streamlit application providing interactive real-time visual similarity search (latency $< 5\text{ ms}$) and an Ablation Dashboard to showcase our scientific findings.
-
-> **Course:** CISC 867 Deep Learning, Spring 2026 — Group 20  
-> **Team:** Natalie Nashed · Mahmoud Alyosify · Mirna Imbabi  
-> **Hardware:** NVIDIA RTX 5000 Ada Generation (32 GB VRAM)  
-> **Progress Log:** [`LOG.md`](LOG.md)
+- ✅ **Color-Jitter Ablation Study:** A thorough analysis of 5 final 200-epoch ResNet-50 experiments to solve the "Shortcut Learning" problem where the encoder exploits low-level color histograms instead of learning invariant semantic features.
+- ✅ **Architecture:** ResNet-50 modified with a custom small-image stem (conv1 3×3, stride 1, padding 1, and no max-pooling) to preserve spatial features for 32×32 CIFAR-10 images.
+- ✅ **Contrastive Frameworks:** - *Unsupervised (SimCLR):* Two-layer MLP projection head + NT-Xent loss with temperature scaling (τ = 0.5).
+  - *Semi-supervised (SupCon - Bonus #4):* Pretraining with Supervised Contrastive Loss (τ = 0.1) on a 10% stratified subset (5,000 labeled samples) of CIFAR-10.
+- ✅ **Real-Time Visual Search Engine:** PyTorch ResNet-50 weights exported to an optimized **ONNX** inference session paired with a **FAISS (IndexFlatIP)** vector database for exact sub-millisecond similarity retrieval.
+- ✅ **Premium Web GUI:** Streamlit application providing interactive real-time visual similarity search (latency < 5 ms) and an Ablation Dashboard to showcase our scientific findings.
 
 ---
 
-## Results (Final Benchmarks)
+## 🏆 Results (Final Benchmarks)
 
 Our final 200-epoch pretraining runs resolved the color-shortcut limitations, leading to outstanding linear probe downstream performance:
 
@@ -46,23 +50,63 @@ Our final 200-epoch pretraining runs resolved the color-shortcut limitations, le
 | SimCLR — Chen et al. (paper) | ResNet-50 | 1000 | 94.00% | Full academic benchmark |
 | Supervised Ceiling — Chen et al. (paper) | ResNet-50 | — | 95.10% | Fully supervised academic ceiling |
 
-> **The Power of Color Jitter:** Without color jittering, contrastive models exploit simple pixel-level color distribution shortcuts. Adding a photometric distortion "shield" forced our ResNet-50 encoder to focus on robust spatial contours, boundaries, and shapes, pushing our Top-1 performance from **64.49%** to a stellar **84.30%** (achieving **95% of CLIP ViT-B/32 zero-shot performance** while using 8,000x less training data!).
+> **💡 The Power of Color Jitter:** Without color jittering, contrastive models exploit simple pixel-level color distribution shortcuts. Adding a photometric distortion "shield" forced our ResNet-50 encoder to focus on robust spatial contours, boundaries, and shapes, pushing our Top-1 performance from **64.49%** to a stellar **84.30%** (achieving **95% of CLIP ViT-B/32 zero-shot performance** while using 8,000x less training data!).
 
 ---
 
-## Augmentation Ablation Study (Color Jitter Re-runs)
+## 🔬 Augmentation Ablation Study (Color Jitter Re-runs)
 
 To isolate the exact impact of color jittering, we ran five comparative experiments for 200 epochs on our ResNet-50 architecture:
 
-| Experiment ID | Augmentation Combination | Without Jitter Acc (Midterm) | With Jitter Acc (Finals) | Downstream Performance Gain |
-|---------------|--------------------------|------------------------------|--------------------------|-----------------------------|
+| Experiment ID | Augmentation Combination | Without Jitter Acc | With Jitter Acc | Downstream Gain |
+|---------------|--------------------------|--------------------|-----------------|-----------------|
 | **Exp 38 vs 36** | Pure Discrete Rotation | 34.40% | 51.21% | **+16.81 pp** |
 | **Exp 39 vs 35** | Weak Spatial Baseline | 59.22% | 80.53% | **+21.31 pp** |
-| **Exp 40 vs 9**  | Crop + Gaussian Blur | 63.01% | 80.65% | **+17.64 pp** |
+| **Exp 40 vs 9** | Crop + Gaussian Blur | 63.01% | 80.65% | **+17.64 pp** |
 | **Exp 41 vs 13** | **Crop + Flip + Blur (Champion)** | **64.49%** | **84.30%** | **+19.81 pp** |
 | **Exp 42 vs 10** | Crop + Random Cutout | 66.27% | 81.21% | **+14.94 pp** |
+| | **Mean Gain** | | | **+18.10 pp** |
 
-*Note: Across all ablation pipelines, adding photometric distortion yielded an average downstream linear probe performance boost of **+18.10 pp**.*
+*Note: All base pipelines converge to nearly identical NT-Xent losses (~4.95–4.96) yet span a 31.87 pp accuracy range — proving that NT-Xent loss alone is an unreliable proxy for representation quality.*
+
+---
+
+## 🏗️ Architecture
+
+**ResNet-50 with CIFAR-10 stem** (following Chen et al. Appendix B.9):
+
+```text
+Input (32×32×3)
+    │
+    ├── [Augmentation t  ~ T]  →  x̃ᵢ ─┐
+    └── [Augmentation t' ~ T]  →  x̃ⱼ ─┤
+                                        ↓
+                              Encoder f(·) — ResNet-50
+                              ┌─────────────────────────┐
+                              │ Conv2d(3→64, 3×3, s=1)  │  ← 7×7 stride-2 replaced
+                              │ BatchNorm → ReLU         │
+                              │ MaxPool → Identity ✗     │  ← removed per B.9
+                              │ Layer1 → 2 → 3 → 4      │
+                              │ AvgPool                  │
+                              └─────────────────────────┘
+                                        │  h ∈ ℝ²⁰⁴⁸
+                                        ↓
+                              Projection Head g(·) — MLP
+                              ┌─────────────────────────┐
+                              │ Linear(2048→2048)        │
+                              │ BatchNorm → ReLU         │  ← BN hidden layer only
+                              │ Linear(2048→128)         │  ← No final BN (collapse!)
+                              └─────────────────────────┘
+                                        │  z ∈ ℝ¹²⁸  →  ℓ₂-norm
+                                        ↓
+                              NT-Xent Loss (τ=0.5, 1023 negatives)
+
+    ── After pretraining: discard g(·), freeze f(·) ──
+                                        │  h ∈ ℝ²⁰⁴⁸
+                                        ↓
+                              nn.Linear(2048→10)  →  84.30% Top-1
+
+```
 
 ---
 
@@ -71,40 +115,44 @@ To isolate the exact impact of color jittering, we ran five comparative experime
 The visual search engine is fully compiled and packed with pre-extracted database embeddings! You do not need to retrain the ResNet-50 to experience the interactive app.
 
 ### 1. Install Dependencies
+
 ```bash
 pip install streamlit onnxruntime faiss-cpu numpy pillow torch torchvision matplotlib scikit-learn
+
 ```
 
 ### 2. Start the Streamlit Application
+
 ```bash
 streamlit run app.py
-```
 
-### 3. Usage
-- **Real-Time Search**: Upload any local photo or click **Pick a Random Test Image** to select one of the 10,000 reference images. The GUI preprocesses the image, runs dynamic-batch inference through the **ONNX ResNet-50 encoder** to extract a 2048-dimensional embedding, L2-normalizes it, and queries the **FAISS Inner Product (Cosine) Index**—all in **less than 5 ms**!
-- **Ablation Study Dashboard**: An interactive scientific portal showcasing our final results, key project takeaways, and the mathematical formulations behind NT-Xent and SupCon losses.
+```
 
 ---
 
 ## 🧠 Training & Re-running Experiments
 
 ### Standard SimCLR Pretraining
+
 To run standard unsupervised SimCLR pretraining with our best parameters:
+
 ```bash
-python src/train_master.py --epochs 200 --batch_size 1024 --backbone resnet50
+python src/train_master.py --epochs 200 --batch_size 512 --backbone resnet50 --exp_id 41
+
 ```
-*Features LARS/AdamW support, automatic linear learning rate scaling (`lr = 0.03 * batch_size / 256`), and TorchInductor compile integration.*
 
 ### Supervised Contrastive Learning (SupCon) Stage 1
+
 To run pretraining on the 10% stratified subset under Supervised Contrastive Loss (Bonus #4):
+
 ```bash
-python train_supcon.py --epochs 200 --batch_size 512 --fraction 0.1
+python train_supcon.py --epochs 100 --batch_size 512 --fraction 0.1 --learning_rate 0.05
+
 ```
-*Performs stratified subset selection of CIFAR-10 and computes SupCon Stage 1 Loss.*
 
 ---
 
-## Repository Structure
+## 📁 Repository Structure
 
 ```text
 SimCLR-Vision-SSL/
@@ -114,13 +162,14 @@ SimCLR-Vision-SSL/
 ├── train_supcon.py                # SupCon Stage 1 pretraining orchestrator (Khosla et al.)
 ├── loss_supcon.py                 # Supervised Contrastive Loss implementation
 ├── dataset_subset.py              # Stratified data sampler (10% or 100% labels)
+├── run_ablations.py               # Run all ablation configs sequentially
 │
 ├── src/                           # Core source modules
-│   ├── augmentations.py           # Natalie's color jitter & spatial augmentation pipelines
+│   ├── augmentations.py           # Color jitter & spatial augmentation pipelines
 │   ├── dataset.py                 # Dataloader builders for training & linear evaluation
 │   ├── loss.py                    # NT-Xent loss (Normalized Temp-scaled Cross-Entropy)
 │   ├── model.py                   # ResNet-50 encoder architecture with custom stem
-│   └── train_master.py            # Master contrastive training orchestrator with AMP & Compile
+│   └── train_master.py            # Master contrastive training orchestrator with AMP
 │
 ├── deployment/                    # Compiled assets for GUI production deployment
 │   ├── simclr_encoder_exp41.onnx  # Exported ONNX encoder model (~90 MB)
@@ -132,38 +181,81 @@ SimCLR-Vision-SSL/
 │   ├── supcon_resnet50_frac10_.../ # Pre-trained SupCon 10% checkpoint
 │   └── supcon_resnet50_frac100_.../# Pre-trained SupCon 100% checkpoint
 │
-├── All Experiment SimCLR 18 May 2026/ # Training logs, curves & checkpoints for Exp 38-42
-│   ├── v9_rotation_jitter_exp38/
-│   ├── v10_weakbaseline_jitter_exp39/
-│   ├── v11_blur_jitter_exp40/
-│   ├── v12_flipblur_jitter_exp41/ # Best performing model
-│   └── v13_cutout_jitter_exp42/
-│
 ├── main-Final-SimCLR Report.tex   # Source LaTeX code of the final academic report
 ├── requirements.txt               # Dependencies list
 └── LOG.md                         # Progress log
+
 ```
 
 ---
 
-## 📚 Citation
+## ⚙️ Training Configuration
+
+| Parameter | Supervised | SimCLR | SupCon |
+| --- | --- | --- | --- |
+| Backbone | ResNet-50 | ResNet-50 | ResNet-50 |
+| Batch size | 256 | 512 | 512 |
+| Optimizer | SGD + momentum | AdamW | SGD + momentum |
+| Peak LR | 0.1 | 0.06 | 0.05 |
+| Weight decay | 1e-4 | 1e-4 | 1e-4 |
+| Warmup epochs | 5 | 10 | 10 |
+| LR schedule | Cosine | Cosine | Cosine |
+| Temperature τ | — | 0.5 | 0.1 |
+| Epochs | 90 | 200 | 100 |
+| Mixed precision | FP16 | FP16 | FP32 |
+
+> ⚠️ **SupCon uses FP32** — with τ=0.1, the exponential term exp(z·z/τ) can reach e¹⁰ ≈ 22,026, causing FP16 overflow.
+
+---
+
+## 🧪 Experiment Tracking
+
+All 42 experiments tracked on **Weights & Biases**:
+
+> 📊 **[https://wandb.ai/mahmoudalyosify/SimCLR-Vision-SSL/workspace](https://wandb.ai/mahmoudalyosify/SimCLR-Vision-SSL/workspace)**
+
+Per-epoch logging: NT-Xent loss, learning rate, wall-clock time, GPU utilization, checkpoint paths.
+
+---
+
+## 👥 Team
+
+| Name | Role |
+| --- | --- |
+| **Natalie Nashed** | Data Augmentation Lead — 8-config pipeline, positive-pair visualization |
+| **Mahmoud Sayed Youssef** | Contrastive Framework Lead — ResNet-50/18, NT-Xent, SupCon, ONNX+FAISS deployment |
+| **Mirna Imbabi** | Linear Evaluation & Reporting Lead — supervised baseline, linear probe, final report |
+
+> **Course:** CISC 867 Deep Learning, Queen's University, Spring 2026
+> **Hardware:** NVIDIA RTX 5000 Ada Generation (34.4 GB VRAM)
+
+---
+
+## 📚 Citation & License
 
 ```bibtex
-@article{khosla2020supervised,
-  title={Supervised contrastive learning},
-  author={Khosla, Priyank and Teterwak, Piotr and Wang, Chen and others},
-  journal={Advances in Neural Information Processing Systems},
-  year={2020}
-  volume={33},
-  pages={18661--18773}
+@inproceedings{chen2020simple,
+  title     = {A Simple Framework for Contrastive Learning of Visual Representations},
+  author    = {Chen, Ting and Kornblith, Simon and Norouzi, Mohammad and Hinton, Geoffrey},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  pages     = {1597--1607},
+  year      = {2020},
+  organization = {PMLR}
 }
 
-@inproceedings{chen2020simple,
-  title={A simple framework for contrastive learning of visual representations},
-  author={Chen, Ting and Kornblith, Simon and Norouzi, Mohammad and Hinton, Geoffrey},
-  booktitle={International conference on machine learning},
-  pages={1597--1607},
-  year={2020},
-  organization={PMLR}
+@inproceedings{khosla2020supervised,
+  title     = {Supervised Contrastive Learning},
+  author    = {Khosla, Priyank and Teterwak, Piotr and Wang, Chen and others},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {33},
+  pages     = {18661--18773},
+  year      = {2020}
 }
+
+```
+
+This project is licensed under the [MIT License](https://www.google.com/search?q=LICENSE).
+
+```
+
 ```
