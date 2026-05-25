@@ -74,6 +74,7 @@ To isolate the exact impact of color jittering, we ran five comparative experime
 ## 🏗️ Architecture
 
 **ResNet-50 with CIFAR-10 stem** (following Chen et al. Appendix B.9):
+<img width="8191" height="2555" alt="architecture_diagram" src="https://github.com/user-attachments/assets/72864cf7-75d2-4738-b727-d602f5dd249f" />
 
 ```text
 Input (32×32×3)
@@ -256,6 +257,6 @@ Per-epoch logging: NT-Xent loss, learning rate, wall-clock time, GPU utilization
 
 This project is licensed under the [MIT License](https://www.google.com/search?q=LICENSE).
 
-```
+
 
 ```
