@@ -209,15 +209,7 @@ SimCLR-Vision-SSL/
 
 ---
 
-## 🧪 Experiment Tracking
 
-All 42 experiments tracked on **Weights & Biases**:
-
-> 📊 **[https://wandb.ai/mahmoudalyosify/SimCLR-Vision-SSL/workspace](https://wandb.ai/mahmoudalyosify/SimCLR-Vision-SSL/workspace)**
-
-Per-epoch logging: NT-Xent loss, learning rate, wall-clock time, GPU utilization, checkpoint paths.
-
----
 
 ## 👥 Team
 
@@ -225,7 +217,7 @@ Per-epoch logging: NT-Xent loss, learning rate, wall-clock time, GPU utilization
 | --- | --- |
 | **Natalie Nashed** | Data Augmentation Lead — 8-config pipeline, positive-pair visualization |
 | **Mahmoud Sayed Youssef** | Contrastive Framework Lead — ResNet-50/18, NT-Xent, SupCon, ONNX+FAISS deployment |
-| **Mirna Imbabi** | Linear Evaluation & Reporting Lead — supervised baseline, linear probe, final report |
+| **Mirna Imbabi** | Linear Evaluation & Reporting Lead — supervised baseline, linear probe |
 
 > **Course:** CISC 867 Deep Learning, Queen's University, Spring 2026
 > **Hardware:** NVIDIA RTX 5000 Ada Generation (34.4 GB VRAM)
