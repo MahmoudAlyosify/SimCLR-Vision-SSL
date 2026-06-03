@@ -131,7 +131,13 @@ Input (32x32x3)
                                           |
                               nn.Linear(2048->10)  ->  84.30% Top-1
 ```
-https://github.com/user-attachments/assets/b26a2d98-641c-47a2-af2b-bea74526dcc3
+
+
+
+https://github.com/user-attachments/assets/54d31900-914f-4111-af39-356b416ed9ec
+
+
+
 ---
 
 ## Quick Start: Running the Interactive Web GUI
