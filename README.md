@@ -107,21 +107,21 @@ Input (32x32x3)
     |-- [Augmentation t' ~ T]  -->  x_j --|
                                           |
                               Encoder f(.) -- ResNet-50
-                              |-------------------------|
-                              | Conv2d(3->64, 3x3, s=1) |  <- 7x7 stride-2 replaced
+                              |--------------------------|
+                              | Conv2d(3->64, 3x3, s=1)  |  <- 7x7 stride-2 replaced
                               | BatchNorm -> ReLU        |
                               | MaxPool -> Identity      |  <- removed per B.9
-                              | Layer1 -> 2 -> 3 -> 4   |
+                              | Layer1 -> 2 -> 3 -> 4    |
                               | AvgPool                  |
-                              |-------------------------|
+                              |--------------------------|
                                           |  h in R^2048
                                           |
                               Projection Head g(.) -- MLP
-                              |-------------------------|
+                              |--------------------------|
                               | Linear(2048->2048)       |
                               | BatchNorm -> ReLU        |  <- BN in hidden layer ONLY
                               | Linear(2048->128)        |  <- No final BN (causes collapse)
-                              |-------------------------|
+                              |--------------------------|
                                           |  z in R^128  ->  L2-norm
                                           |
                               NT-Xent Loss (tau=0.5, 1023 in-batch negatives)
@@ -248,7 +248,7 @@ All 42 experiments tracked in real-time on **Weights & Biases**:
 - Linear probe accuracy trajectories
 - Full reproducibility with fixed seed 42 across Python, NumPy, and PyTorch
 
-**[View W&B Dashboard](https://wandb.ai/mahmoudalyosify/SimCLR-Vision-SSL/workspace)**
+**[View W&B Dashboard]([https://wandb.ai/mahmoudalyosify/SimCLR-Vision-SSL/workspace](https://api.wandb.ai/links/models-queen-s-university/6f2t0db2))**
 
 ---
 
