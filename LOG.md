@@ -57,8 +57,7 @@ This log tracks weekly progress, key decisions, issues encountered, and the indi
   * `[19685806ffabd7ef3ea403c94f5a5496e100bf5d]` - add: Our model output for the 8 experiment Registry.
   *(Final Phase Commits)*
   * `[ ]` - refactor(train): scale automated training engine to reliably execute 42-experiment suite
-  * `[ ]` - feat(supcon): implement Supervised Contrastive loss and 10% stratified sampling
-  * `[ ]` - fix(supcon): resolve FP16 overflow and BatchNorm representation collapse after 6 trial runs
+  * `[d0a27e1d6723a4568a30e9a87792449a46f963f4]` - feat(supcon): implement Supervised Contrastive loss and 10% stratified sampling
   * `[4782394bfeecffb5b6382a740fcdb8aa39e23322]` - feat(deploy): export champion ResNet-50 encoder to ONNX for low-latency inference
   * `[41bb0a57a7ca8d6c8508d43d0666c500ae5566ef]` - feat(deploy): build FAISS vector index (IndexFlatIP) for real-time 10k image retrieval
   * `[b1199f78cc8e1342ea11640622ce02ac7fd10f46]` - feat(app): develop and deploy interactive Streamlit GUI to Hugging Face Spaces
