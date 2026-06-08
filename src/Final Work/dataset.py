@@ -1,4 +1,22 @@
+"""
+dataset.py — Modular Dataset & Augmentation Registry
+Group 20, CISC 867, Queen's University, Spring 2026
+Author (Student A): Natalie Nashed  — augmentation definitions
+Author (Student B): Mahmoud Alyosify — registry architecture, SupCon loader
 
+TWO REGISTRIES
+──────────────
+1. EXP_REGISTRY        — the 8 midterm ablation configs (exp_id 1–8)
+2. EXTENDED_REGISTRY   — Natalie's 15–20 new augmentations (names as strings)
+                          She fills in the transforms; the loader just calls
+                          get_train_dataloader(..., aug_name='randaugment')
+
+SUPCON SUPPORT
+──────────────
+get_supcon_dataloader() returns a labeled DataLoader for Bonus #4:
+    - Stratified subsampling to `label_fraction` of the training set
+    - Returns (view1, view2), label  so SupConLoss can use class info
+"""
 
 import os
 import numpy as np
