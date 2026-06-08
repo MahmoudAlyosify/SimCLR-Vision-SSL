@@ -51,16 +51,16 @@ This log tracks weekly progress, key decisions, issues encountered, and the indi
   * `a2410aa7e0271425374f452171dffdd8a4948007` - feat(model): modify ResNet-18/50 stems for 32x32 images and implement MLP projection heads
   * `13c987f05627ad0702220c4574ade70ee7d87a4f` - feat(loss): implement NT-Xent loss function with temperature scaling and self-similarity masking
   * `b051778e7beb454c3915af5dbe3696430a588e08` - feat(train): build SimCLR contrastive training loop and logging setup
-  * `[71edb77d6f265b8a3f1b102b9c1ea60caf2d7a77]` - Add: Python script code to perform training on the 8 experiments and output the graphs.
-  * `[cc24c17484b47c13c0dcfa0f45c75b4e1473c883]` - feat(train): build SimCLR contrastive training loop and logging setup for work in 8 Experiments
-  * `[6efe1f5d4462698599667fd375ba30a30fbb40c4]` - feat(loss): implement NT-Xent loss function with temperature scaling and self-similarity masking
-  * `[19685806ffabd7ef3ea403c94f5a5496e100bf5d]` - add: Our model output for the 8 experiment Registry.
+  * `71edb77d6f265b8a3f1b102b9c1ea60caf2d7a77` - Add: Python script code to perform training on the 8 experiments and output the graphs.
+  * `cc24c17484b47c13c0dcfa0f45c75b4e1473c883` - feat(train): build SimCLR contrastive training loop and logging setup for work in 8 Experiments
+  * `6efe1f5d4462698599667fd375ba30a30fbb40c4` - feat(loss): implement NT-Xent loss function with temperature scaling and self-similarity masking
+  * `19685806ffabd7ef3ea403c94f5a5496e100bf5d` - add: Our model output for the 8 experiment Registry.
   *(Final Phase Commits)*
-  * `[f31b6ae07099c3f212cdb310e1bfbd8ac2b63208]` - refactor(train): scale automated training engine to reliably execute 42-experiment suite
-  * `[d0a27e1d6723a4568a30e9a87792449a46f963f4]` - feat(supcon): implement Supervised Contrastive loss and 10% stratified sampling
-  * `[4782394bfeecffb5b6382a740fcdb8aa39e23322]` - feat(deploy): export champion ResNet-50 encoder to ONNX for low-latency inference
-  * `[41bb0a57a7ca8d6c8508d43d0666c500ae5566ef]` - feat(deploy): build FAISS vector index (IndexFlatIP) for real-time 10k image retrieval
-  * `[b1199f78cc8e1342ea11640622ce02ac7fd10f46]` - feat(app): develop and deploy interactive Streamlit GUI to Hugging Face Spaces
+  * `f31b6ae07099c3f212cdb310e1bfbd8ac2b63208` - refactor(train): scale automated training engine to reliably execute 42-experiment suite
+  * `d0a27e1d6723a4568a30e9a87792449a46f963f4` - feat(supcon): implement Supervised Contrastive loss and 10% stratified sampling
+  * `4782394bfeecffb5b6382a740fcdb8aa39e23322` - feat(deploy): export champion ResNet-50 encoder to ONNX for low-latency inference
+  * `41bb0a57a7ca8d6c8508d43d0666c500ae5566ef` - feat(deploy): build FAISS vector index (IndexFlatIP) for real-time 10k image retrieval
+  * `b1199f78cc8e1342ea11640622ce02ac7fd10f46` - feat(app): develop and deploy interactive Streamlit GUI to Hugging Face Spaces
 
 ---
 
