@@ -1,4 +1,8 @@
 # SupCon paper: https://arxiv.org/abs/2004.11362
+#
+# NT-Xent defines one positive per anchor (its augmented twin).
+# SupCon defines all same-class embeddings in the batch as positives,
+# exploiting label supervision while still using unlabeled negatives.
 
 import torch
 import torch.nn as nn
@@ -109,7 +113,7 @@ class SupConLoss(nn.Module):
             anchor_feat = features[:, 0, :]                    # (N, D)
             anchor_count = 1
         else:
-            anchor_feat = features.view(batch_size * n_views, feat_dim)  # (N*v, D)
+            anchor_feat = features.view(batch_size * n_views, feat_dim)
             anchor_count = n_views
 
         contrast_feat = features.view(batch_size * n_views, feat_dim)
@@ -120,7 +124,7 @@ class SupConLoss(nn.Module):
         logits_max, _ = anchor_dot_contrast.max(dim=1, keepdim=True)
         logits = anchor_dot_contrast - logits_max.detach()
 
-        # Tile mask to all view combinations, then remove self-contrast entries
+        # Tile mask to cover all view combinations, then zero out self-contrast
         mask_tiled = mask.repeat(anchor_count, contrast_count)
         self_contrast_mask = torch.scatter(
             torch.ones_like(mask_tiled),
