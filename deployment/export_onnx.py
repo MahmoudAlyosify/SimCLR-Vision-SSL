@@ -1,24 +1,6 @@
-"""
-================================================================================
-  Export SimCLR Encoder to ONNX
-  ----------------------------
-  Converts the best SimCLR ResNet-50 encoder (Exp 41, 84.30% Top-1)
-  from PyTorch (.pth) to ONNX format for fast CPU/GPU inference in
-  the FAISS image-retrieval GUI.
 
-  What this script does:
-    1. Rebuilds the SimCLRResNet50 architecture (encoder-only, no projector)
-    2. Loads the trained weights from simclr_encoder_final.pth
-    3. Exports to ONNX with dynamic batch size
-    4. Validates the ONNX model against PyTorch output (max error < 1e-5)
+  #Export SimCLR Encoder to ONNX
 
-  Output:
-    ./deployment/simclr_encoder_exp41.onnx   (~90 MB)
-
-  Usage:
-    python export_onnx.py
-================================================================================
-"""
 
 import os
 import sys
