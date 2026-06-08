@@ -260,6 +260,8 @@ All 42 experiments tracked in real-time on **Weights & Biases**:
 | **Mahmoud Alyosify** | Contrastive Framework Lead — ResNet-50/18, NT-Xent loss, SupCon (6 diagnostic runs), ONNX+FAISS+Streamlit deployment, W&B tracking |
 | **Mirna Imbabi** | Linear Evaluation & Reporting Lead — supervised baseline (93.77%), linear probe protocol, confusion matrix, final report |
 
+<img width="1918" height="1078" alt="Team" src="https://github.com/user-attachments/assets/835dd738-3247-43e5-8a0f-e1df8f0c8341" />
+
 **Course:** CISC 867 Deep Learning, Queen's University, Spring 2026  
 **Hardware:** NVIDIA RTX 5000 Ada Generation (34.4 GB VRAM)
 
