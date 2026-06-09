@@ -83,9 +83,8 @@ This log tracks weekly progress, key decisions, issues encountered, and the indi
   * `[61fec6124907426f2e1f7684f6d5d7c42979962c]` - bug fixes.
   * `[2d5d43af5230bc26f20bb9ac173b39d030da21c0]` - Implement baseline.
   * `[f44c6720ff05bcf30280dfe6c5ca4861b065f349]` - Implement supervised baseline and linear probe evaluation.
-  * `[e774bff9e38d7213e8175c3e85a96dcb2f1bae09]` - Add linear probe training and evaluation.
+  * `[e774bff9e38d7213e8175c3e85a96dcb2f1bae09]` - Added linear probe training and evaluation.
   *(Final Phase Commits)*
-  * `[ ]` - feat(eval): automate and debug linear probe evaluation across all 42 experiments
-  * `[ ]` - feat(vis): generate confusion matrices and final t-SNE projections
-  * `[ ]` - feat(eval): implement custom CLIP ViT-B/32 zero-shot inference pipeline
-  * `[ ]` - test(deploy): conduct extensive OOD live testing to isolate failure mode statistics
+  * `[b4be624a5bac221f89bd6a887efd2b7dcd59beb1]` - Added probe evaluation and experiment visualization scripts.
+  * `[ae2d2f483b15c3af0f5a0fcee464275a48ebcf63]` - Added evaluation outputs: confusion matrices and performance figures.
+  * `[8bc7035004a3785e72b52280f6949086ee8cd968]` - Added CLIP zero-shot evaluation script for baseline comparison.
