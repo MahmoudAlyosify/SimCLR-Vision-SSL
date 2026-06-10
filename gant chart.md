@@ -1,51 +1,37 @@
 # Detailed Project Structured Timeline (Gantt Chart)
 
-Below is the interactive Gantt chart illustrating task allocation, the structured timeline, cross-task dependencies, and responsibilities across the five weeks of the project, strictly mirroring the detailed data provided in the report.
-
 ```mermaid
+%%{init: {'theme': 'default', 'themeVariables': { 'background': '#ffffff', 'primaryColor': '#ebf5fb', 'primaryBorderColor': '#2980b9', 'textColor': '#000000', 'lineColor': '#7f8c8d'}}}%%
 gantt
-    title SimCLR & SupCon Project Structured Timeline (Gantt Chart)
+    title SimCLR & SupCon Project Structured Timeline
     dateFormat  YYYY-MM-DD
-    %% The axis format displays "Week" followed by the week number
-    axisFormat  Week %U
+    axisFormat  %b %d
     tickInterval 1week
 
-    %% -----------------------------------------------------------
-    %% ASSIGNEE KEY (implied via naming in tasks)
-    %% N.N & M.I = N. Nashed & M. Imbabi
-    %% M.A       = M. Alyosify
-    %% N.N & M.A = N. Nashed & M. Alyosify
-    %% M.I & M.A = M. Imbabi & M. Alyosify
-    %% M.I       = M. Imbabi
-    %% N.N       = N. Nashed
-    %% All       = All Members
-    %% -----------------------------------------------------------
+    section Week 1 (Setup)
+    Repo Init & CIFAR-10 Loader (N.N & M.I)    :w1_1, 2026-06-01, 3d
+    Supervised ResNet-50 Baseline (N.N & M.I)  :w1_2, 2026-06-04, 4d
+    ResNet-18/50 Stem Modifications (M.A)      :crit, w1_3, 2026-06-02, 6d
 
-    section Week 1: Setup & Baselines
-    %% [crit] marks critical path tasks, [active/done] sets status
-    Repo Init, CIFAR-10 Loader setup (N.N & M.I)   :active, w1_t1, 2026-06-01, 7d
-    Impl. Supervised ResNet-50 baseline (N.N & M.I):w1_t2, after w1_t1, 5d
-    ResNet-18/50 Stem Modifications (M.A)           :crit, w1_t3, after w1_t1, 6d
+    section Week 2 (Core Head)
+    Stochastic Augmentation Module (N.N & M.A) :crit, w2_1, 2026-06-08, 4d
+    MLP Head & NT-Xent Loss (N.N & M.A)        :w2_2, 2026-06-08, 4d
+    20-epoch Ablations & Validation (M.I & M.A):w2_3, 2026-06-12, 3d
+    MIDTERM SUBMISSION                         :milestone, m1, 2026-06-15, 0d
 
-    section Week 2: Augmentations & Core
-    Program Stochastic Augmentation Module (N.N & M.A):crit, w2_t1, after w1_t3, 7d
-    Impl. MLP Head & NT-Xent Loss logic (N.N & M.A)  :w2_t2, after w1_t3, 7d
-    Execute 20-epoch Ablations (M.I & M.A)            :w2_t3, after w2_t1 w2_t2, 5d
-    MIDTERM REPORT SUBMISSION                         :milestone, w2_m, after w2_t3, 0d
+    section Week 3 (SimCLR)
+    200-epoch SimCLR Final Run (M.A)           :crit, active, w3_1, 2026-06-15, 7d
+    Augmentation Difficulty Analysis (N.N)     :w3_2, 2026-06-15, 4d
+    SimCLR Linear Probe Eval (M.I)             :w3_3, 2026-06-19, 3d
 
-    section Week 3: SimCLR Training & Eval
-    Execute 200-epoch SimCLR Final Run (Exp 41) (M.A):crit, active, w3_t1, after w2_m, 7d
-    Analyze Augmentation Difficulty Hierarchy (N.N)   :w3_t2, after w2_m, 5d
-    SimCLR Linear Probe Evaluation (M.I)             :w3_t3, after w3_t1, 4d
+    section Week 4 (SupCon)
+    SupCon Adaptation & Fixes (M.A)            :w4_1, 2026-06-22, 7d
+    Shortcut Visualization Fig (N.N)           :w4_2, 2026-06-22, 4d
+    SupCon Linear Probe Eval (M.I)             :w4_3, 2026-06-26, 3d
 
-    section Week 4: SupCon Adaptation
-    Impl. SupCon Adaptation & resolve failures (M.A)  :w4_t1, after w3_t1, 7d
-    SupCon Linear Probe Eval & Results Table (M.I)   :w4_t2, after w4_t1, 5d
-    Shortcut Visualization Figure Generation (N.N)   :w4_t3, 2026-06-22, 6d %% Dependent on earlier Color Jitter ablations
-
-    section Week 5: Deployment & Wrap-up
-    Model Export (ONNX) & Streamlit Deployment (M.A) :w5_t1, after w4_t1, 7d
-    Class-Level Diagnostics & Confusion Matrix (M.I) :w5_t2, after w4_t2, 5d
-    Presentation Prep & Recording (All)              :w5_t3, after w4_t2, 5d %% Post results-freeze
-    LOG.md Sync & IEEE Manuscript Assembly (All)     :crit, active, w5_t4, after w4_t2, 7d
-    FINAL PROJECT SUBMISSION                          :milestone, final_m, after w5_t4, 0d
+    section Week 5 (Deployment)
+    ONNX Export & Streamlit (M.A)              :w5_1, 2026-06-29, 7d
+    Class Diagnostics & Conf. Matrix (M.I)     :w5_2, 2026-06-29, 4d
+    Presentation Recording (All)               :w5_3, 2026-07-03, 3d
+    IEEE Manuscript & LOG.md (All)             :crit, active, w5_4, 2026-07-03, 3d
+    FINAL SUBMISSION                           :milestone, m2, 2026-07-06, 0d
