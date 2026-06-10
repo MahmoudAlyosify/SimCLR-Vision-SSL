@@ -129,15 +129,14 @@ Input (32×32×3)
 ```
 
 **Critical implementation detail:** Applying BatchNorm to the projection output *and* subsequently applying ℓ₂-normalization constitutes double normalization that collapses all embeddings to a single point (confirmed empirically in SupCon runs 4–5). BatchNorm must be placed in the hidden layer only.
-```
+
 
 
 
 https://github.com/user-attachments/assets/54d31900-914f-4111-af39-356b416ed9ec
 
+```
 
-
----
 ---
 
 ## SupCon Training Diagnostics
