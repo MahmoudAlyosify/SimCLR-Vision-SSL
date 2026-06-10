@@ -105,18 +105,18 @@ Input (32×32×3)
                         Encoder f(·) — ResNet-50
                         ┌──────────────────────────┐
                         │ Conv2d(3→64, 3×3, s=1)   │  ← replaces 7×7 stride-2 stem
-                        │ BatchNorm → ReLU          │
-                        │ Identity (no MaxPool)     │  ← removed per Appendix B.9
-                        │ Layer1 → 2 → 3 → 4        │
-                        │ AvgPool                   │
+                        │ BatchNorm → ReLU         │
+                        │ Identity (no MaxPool)    │  ← removed per Appendix B.9
+                        │ Layer1 → 2 → 3 → 4       │
+                        │ AvgPool                  │
                         └──────────────────────────┘
                                       │  h ∈ ℝ²⁰⁴⁸
                                       │
                         Projection Head g(·) — MLP
                         ┌──────────────────────────┐
-                        │ Linear(2048 → 2048)       │
-                        │ BatchNorm → ReLU          │  ← BN in hidden layer ONLY
-                        │ Linear(2048 → 128)        │  ← no final BN (causes collapse)
+                        │ Linear(2048 → 2048)      │
+                        │ BatchNorm → ReLU         │  ← BN in hidden layer ONLY
+                        │ Linear(2048 → 128)       │  ← no final BN (causes collapse)
                         └──────────────────────────┘
                                       │  z ∈ ℝ¹²⁸ → ℓ₂-norm
                                       │
