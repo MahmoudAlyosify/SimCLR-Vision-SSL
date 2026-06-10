@@ -129,7 +129,15 @@ Input (32×32×3)
 ```
 
 **Critical implementation detail:** Applying BatchNorm to the projection output *and* subsequently applying ℓ₂-normalization constitutes double normalization that collapses all embeddings to a single point (confirmed empirically in SupCon runs 4–5). BatchNorm must be placed in the hidden layer only.
+```
 
+
+
+https://github.com/user-attachments/assets/54d31900-914f-4111-af39-356b416ed9ec
+
+
+
+---
 ---
 
 ## SupCon Training Diagnostics
@@ -151,15 +159,6 @@ Six iterative runs were required to stabilize SupCon training. Each failure mode
 - **Runs 2–3 (L = 2.31 = log(10)):** AdamW lr=0.5 is ~167× the typical maximum; gradient updates destroy all learned structure from step 1, leaving the model at the uniform-class fixed point.
 - **Runs 4–5 (L = 6.93 = log(1023)):** Final BatchNorm + subsequent ℓ₂-normalization = double normalization, over-constraining the representation manifold.
 - **Run 6:** Remove final BN + τ=0.1 + per-step SGD warmup from lr=0.01 → resolves all failure modes simultaneously.
-
----
-```
-
-
-
-https://github.com/user-attachments/assets/54d31900-914f-4111-af39-356b416ed9ec
-
-
 
 ---
 ## Quick Start
