@@ -14,7 +14,6 @@ This log tracks weekly progress, key decisions, issues encountered, and the indi
   * **Tuple Augmentation:** Needed to ensure that the augmentation pipeline generates two *independent* views for the exact same image in a single pass; standard PyTorch datasets only return one. Built a custom Dataset wrapper `SimCLRDataset` to handle returning tuples of augmented images.
   * **Discrete vs. Continuous Rotation:** Designing the pure discrete rotation ($0^\circ, 90^\circ, 180^\circ, 270^\circ$) required custom tensor manipulations and disabling interpolation grids, since standard `RandomRotation` is continuous and introduces unwanted spatial blurring artifacts.
 * **Key Commits:**
-  *(Midterm Commits)*
   * `[49c97c1193f9d633fdd8c1966d1836c4f709232b]` - Add file : Add YAML config for augmentation hyperparameters and normalization stats.
   * `[82c6360487e224526fababd685b2f3a916c2240f]` - feat(data): setup augmentation configs and core SimCLR view generator class
   * `[47d67f65c8476f43fee994e11202dce16444f3ca]` - feat(data): implement baseline spatial augmentations [ Exp 1 and 2 ]
@@ -22,7 +21,6 @@ This log tracks weekly progress, key decisions, issues encountered, and the indi
   * `[518d35e4e0a528a4755872fb2a2063028e2bdf1c]` - feat(data): finalize comprehensive contrastive augmentation suite [ Exp 7-8 ]
   * `[c509405245433993e3d5b3f38ba7959ba3fa9573]` - feat(data): create Custom AugmentedDataset wrapper and initialize dataloaders
   * `[d73db8faf5eae69ce7d5a5db69035473099d371a]` - chore(vis): add Jupyter notebook for qualitative visualization of augmentation experiments
-  *(Final Phase Commits)*
   * `[fb89b965033aeed181cd5356078a5f27c7c00e37]` - feat(data): implement advanced structural augmentations (Blur, Sobel, Noise, Cutout)
   * `[660de23616f1d625429e0d732ac1b9446ad96721]` - feat(data): design and integrate 42-experiment ablation configuration suite
   * `[e00c7bec2e9d1e95feeb841cc8b9427aa179bbb1]` - feat(data): implement SimCLR augmentation pipelines and baseline ablation matrix
@@ -46,7 +44,6 @@ This log tracks weekly progress, key decisions, issues encountered, and the indi
     2. *Degenerate Plateau:* Loss stuck exactly at $\approx 2.31$ ($\log(10)$). Discovered this meant the model assigned equal probability to all 10 classes. Fixed by adding SGD linear warmup.
     3. *Representation Collapse:* Loss collapsed to $6.93$ (uniform similarity) when using a final BatchNorm layer followed by L2 normalization, which over-constrained the manifold. Solved by stripping final BN from the MLP.
 * **Key Commits:**
-  *(Midterm Commits)*
   * `a2410aa7e0271425374f452171dffdd8a4948007` - feat(model): modify ResNet-18/50 stems for 32x32 images and implement MLP projection heads
   * `13c987f05627ad0702220c4574ade70ee7d87a4f` - feat(loss): implement NT-Xent loss function with temperature scaling and self-similarity masking
   * `b051778e7beb454c3915af5dbe3696430a588e08` - feat(train): build SimCLR contrastive training loop and logging setup
@@ -54,7 +51,6 @@ This log tracks weekly progress, key decisions, issues encountered, and the indi
   * `cc24c17484b47c13c0dcfa0f45c75b4e1473c883` - feat(train): build SimCLR contrastive training loop and logging setup for work in 8 Experiments
   * `6efe1f5d4462698599667fd375ba30a30fbb40c4` - feat(loss): implement NT-Xent loss function with temperature scaling and self-similarity masking
   * `19685806ffabd7ef3ea403c94f5a5496e100bf5d` - add: Our model output for the 8 experiment Registry.
-  *(Final Phase Commits)*
   * `f31b6ae07099c3f212cdb310e1bfbd8ac2b63208` - refactor(train): scale automated training engine to reliably execute 42-experiment suite
   * `d0a27e1d6723a4568a30e9a87792449a46f963f4` - feat(supcon): implement Supervised Contrastive loss and 10% stratified sampling
   * `4782394bfeecffb5b6382a740fcdb8aa39e23322` - feat(deploy): export champion ResNet-50 encoder to ONNX for low-latency inference
@@ -76,14 +72,12 @@ This log tracks weekly progress, key decisions, issues encountered, and the indi
     1. *Resolution-induced distribution shift* (Bicubic downsampling destroys facial features of high-res dogs, making them look like horses).
     2. *Background bias* (Camouflaged frogs retrieved as birds due to shared green/brown backgrounds).
 * **Key Commits:**
-  *(Midterm Commits)*
   * `[9960f373906ae6c56033335344129a221f7be380]` - Baseline added.
   * `[9036e4acf736f8e3a30f30c20881dfb323ef3899]` - bug fixes.
   * `[61fec6124907426f2e1f7684f6d5d7c42979962c]` - bug fixes.
   * `[2d5d43af5230bc26f20bb9ac173b39d030da21c0]` - Implement baseline.
   * `[f44c6720ff05bcf30280dfe6c5ca4861b065f349]` - Implement supervised baseline and linear probe evaluation.
   * `[e774bff9e38d7213e8175c3e85a96dcb2f1bae09]` - Added linear probe training and evaluation.
-  *(Final Phase Commits)*
   * `[b4be624a5bac221f89bd6a887efd2b7dcd59beb1]` - Added probe evaluation and experiment visualization scripts.
   * `[ae2d2f483b15c3af0f5a0fcee464275a48ebcf63]` - Added evaluation outputs: confusion matrices and performance figures.
   * `[8bc7035004a3785e72b52280f6949086ee8cd968]` - Added CLIP zero-shot evaluation script for baseline comparison.
