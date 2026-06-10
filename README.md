@@ -101,7 +101,7 @@ Input (32×32×3)
     │
     ├── [Augmentation t  ~ T] → x_i ─┐
     └── [Augmentation t' ~ T] → x_j ─┤
-                                      │
+                                     │
                         Encoder f(·) — ResNet-50
                         ┌──────────────────────────┐
                         │ Conv2d(3→64, 3×3, s=1)   │  ← replaces 7×7 stride-2 stem
