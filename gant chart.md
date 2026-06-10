@@ -5,13 +5,14 @@
 gantt
     title SimCLR & SupCon Project Structured Timeline
     dateFormat  YYYY-MM-DD
-    axisFormat  %b %d
-    tickInterval 1week
+    axisFormat  %d/%m
+    tickInterval 7day
+    todayMarker off
 
     section Week 1 (Setup)
     Repo Init & CIFAR-10 Loader (N.N & M.I)    :w1_1, 2026-06-01, 3d
     Supervised ResNet-50 Baseline (N.N & M.I)  :w1_2, 2026-06-04, 4d
-    ResNet-18/50 Stem Modifications (M.A)      :crit, w1_3, 2026-06-02, 6d
+    ResNet-18/50 Stem Modifications (M.A)      :crit, w1_3, 2026-06-01, 7d
 
     section Week 2 (Core Head)
     Stochastic Augmentation Module (N.N & M.A) :crit, w2_1, 2026-06-08, 4d
