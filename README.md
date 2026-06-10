@@ -306,6 +306,7 @@ gantt
 | **Mahmoud Alyosify** | Contrastive Framework Lead — ResNet-50/18 encoders, NT-Xent loss, full SimCLR training loop (AMP, W&B), SupCon (6 diagnostic runs), ONNX + FAISS + Streamlit deployment |
 | **Mirna Imbabi** | Linear Evaluation Lead — supervised baseline (93.77%), frozen-encoder probing protocol, confusion matrix, per-class diagnostics, final report assembly |
 <img width="1918" height="1078" alt="Team" src="https://github.com/user-attachments/assets/835dd738-3247-43e5-8a0f-e1df8f0c8341" />
+
 **Course:** CISC 867 Deep Learning, Queen's University, Spring 2026 
 
 **Hardware:** NVIDIA RTX 5000 Ada Generation (34.4 GB VRAM)
