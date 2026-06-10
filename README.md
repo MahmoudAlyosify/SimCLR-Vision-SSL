@@ -135,7 +135,7 @@ Input (32×32×3)
 
 https://github.com/user-attachments/assets/54d31900-914f-4111-af39-356b416ed9ec
 
-```
+
 
 ---
 
