@@ -300,6 +300,7 @@ gantt
 
 ## Team
 <img width="1918" height="1078" alt="Team" src="https://github.com/user-attachments/assets/835dd738-3247-43e5-8a0f-e1df8f0c8341" />
+
 | Name | Role |
 |------|------|
 | **Natalie Nashed** | Data Augmentation Lead — 42-experiment pipeline design, positive-pair visualization, three-tier difficulty hierarchy analysis, shortcut visualization figure |
