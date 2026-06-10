@@ -153,7 +153,15 @@ Six iterative runs were required to stabilize SupCon training. Each failure mode
 - **Run 6:** Remove final BN + τ=0.1 + per-step SGD warmup from lr=0.01 → resolves all failure modes simultaneously.
 
 ---
+```
 
+
+
+https://github.com/user-attachments/assets/54d31900-914f-4111-af39-356b416ed9ec
+
+
+
+---
 ## Quick Start
 
 ### Run the Visual Search Engine (No Retraining Needed)
@@ -299,7 +307,7 @@ gantt
 | **Natalie Nashed** | Data Augmentation Lead — 42-experiment pipeline design, positive-pair visualization, three-tier difficulty hierarchy analysis, shortcut visualization figure |
 | **Mahmoud Alyosify** | Contrastive Framework Lead — ResNet-50/18 encoders, NT-Xent loss, full SimCLR training loop (AMP, W&B), SupCon (6 diagnostic runs), ONNX + FAISS + Streamlit deployment |
 | **Mirna Imbabi** | Linear Evaluation Lead — supervised baseline (93.77%), frozen-encoder probing protocol, confusion matrix, per-class diagnostics, final report assembly |
-
+<img width="1918" height="1078" alt="Team" src="https://github.com/user-attachments/assets/835dd738-3247-43e5-8a0f-e1df8f0c8341" />
 **Course:** CISC 867 Deep Learning, Queen's University, Spring 2026  
 **Hardware:** NVIDIA RTX 5000 Ada Generation (34.4 GB VRAM)
 
