@@ -216,34 +216,62 @@ python train_supcon.py \
 
 ```
 SimCLR-Vision-SSL/
-├── app.py                          # Streamlit visual search engine & ablation GUI
-├── build_faiss.py                  # Extracts 2048-d features and builds FAISS index
-├── export_onnx.py                  # Exports Exp 41 ResNet-50 weights to ONNX
-├── train_supcon.py                 # SupCon Stage 1 pretraining orchestrator
-├── loss_supcon.py                  # Supervised Contrastive Loss implementation
-├── dataset_subset.py               # Stratified data sampler (10% / 100% labels)
-├── run_ablations.py                # Runs all ablation configs sequentially
+├── deployment/                     # Production assets for Streamlit GUI & inference
+│   ├── app.py                      # Streamlit visual search engine & ablation explorer
+│   ├── build_faiss.py              # Extracts 2048-d features and builds FAISS index
+│   ├── export_onnx.py              # Exports Exp 41 ResNet-50 weights to ONNX format
+│   ├── simclr_encoder_exp41.onnx   # ONNX encoder (~89.6 MB, max deviation: 3.81e-6)
+│   ├── cifar10_index.faiss         # FAISS IndexFlatIP (10,000 vectors)
+│   ├── metadata.json               # Vector ID → class name / image path mapping
+│   ├── test_images/                # 10,000 reference CIFAR-10 PNG images
+│   └── simclr_encoder_exp41.onnx.data
 │
-├── src/                            # Core source modules
+├── src/Final Work/                 # Primary codebase (Experiments 1–42)
 │   ├── augmentations.py            # 42 augmentation pipelines (Exps 1–42)
 │   ├── dataset.py                  # DataLoader builders for training & evaluation
 │   ├── loss.py                     # NT-Xent loss implementation
 │   ├── model.py                    # ResNet-50/18 encoder with custom CIFAR-10 stem
-│   └── train_master.py             # Master contrastive training loop (AMP, W&B)
+│   ├── train_master.py             # Master contrastive training loop (AMP, W&B logging)
+│   ├── run_beast_experiments.py    # BEAST hyperparameter sweep orchestrator
+│   ├── run_top_5_production.py     # Runs top 5 configurations for production
+│   ├── run_final_ablations_18_may.py # Final ablation experiment suite
+│   ├── plot_ablation.py            # Visualization & plotting for ablations
+│   ├── run_config.json             # Configuration template for runs
+│   ├── configs/                    # Augmentation YAML configurations
+│   ├── supcon/                     # Supervised Contrastive pretraining modules
+│   │   ├── train_supcon.py         # SupCon Stage 1 pretraining orchestrator
+│   │   ├── loss_supcon.py          # Supervised Contrastive Loss implementation
+│   │   └── dataset_subset.py       # Stratified data sampler (10% / 100% labels)
+│   └── Evaluation/                 # Post-training evaluation & analysis
+│       ├── evaluate_all_probes.py  # Linear probe evaluation across all experiments
+│       ├── evaluate_and_plot_beast.py # BEAST sweep evaluation & visualization
+│       ├── evaluate_clip_zeroshot.py  # Zero-shot CLIP baseline comparison
+│       ├── confusion_matrix/       # Confusion matrix outputs
+│       └── figures/                # Generated evaluation figures
 │
-├── deployment/                     # Production assets for Streamlit GUI
-│   ├── simclr_encoder_exp41.onnx   # ONNX encoder (~89.6 MB, max deviation: 3.81e-6)
-│   ├── cifar10_index.faiss         # FAISS IndexFlatIP (10,000 vectors)
-│   ├── metadata.json               # Vector ID → class name / image path
-│   └── test_images/                # 10,000 reference CIFAR-10 PNG images
+├── outputs/                        # Training checkpoints & logs (Experiments 1–8)
+│   ├── Experiment 1–8/
+│   │   ├── logs/
+│   │   │   └── training_log.csv    # Loss / accuracy per epoch
+│   │   └── plots/                  # Per-experiment visualizations
 │
-├── outputs/                        # Checkpoints from training runs
-│   ├── supcon_resnet50_frac10_.../  # SupCon 10% checkpoint
-│   └── supcon_resnet50_frac100_.../ # SupCon 100% checkpoint
+├── notebooks/                      # Interactive analysis & visualization
+│   ├── visualize-pairs.ipynb       # Augmentation pair visualization
+│   ├── Linear evaluation notebook/
+│   │   ├── supervised-baseline-and-linear-probe-evaluation.ipynb
+│   │   └── logs/                   # Baseline & probe training histories
 │
-├── main-Final-SimCLR Report.tex    # LaTeX source of the final IEEE report
-├── requirements.txt                # Full dependency list
-└── LOG.md                          # Development log with AI usage disclosure
+├── configs/                        # Top-level configuration files
+│   └── augmentation.yaml           # Global augmentation configuration
+│
+├── figures/                        # Publication-ready figures
+│
+├── requirements.txt                # Full Python dependency list
+├── run_ablations.py                # Runs all ablation configs sequentially
+├── README.md                       # Project overview & usage guide
+├── LOG.md                          # Development log with AI usage disclosure
+├── LICENSE                         # Project license
+└── .gitignore                      # Git ignore rules
 ```
 
 ---
