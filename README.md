@@ -13,6 +13,13 @@
 
 ---
 
+
+https://github.com/user-attachments/assets/bf538b49-1b4c-42ad-ab04-f7d9df238d17
+
+
+---
+
+
 ## Live Demo
 
 **Try the visual search engine — no installation required:**
