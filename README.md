@@ -7,7 +7,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.5+-ee4c2c?logo=pytorch)](https://pytorch.org)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Final%20Completed-success)]()
-[![Course](https://img.shields.io/badge/CISC_867-Group_20-blueviolet)]()
+[![Course](https://img.shields.io/badge/CISC_867-Queen's-blueviolet)]()
 [![HuggingFace](https://img.shields.io/badge/Live%20Demo-Hugging%20Face%20Spaces-yellow)](https://huggingface.co/spaces/mahmoudalyosify/SimCLR-Visual-Search-Engine)
 [![W&B](https://img.shields.io/badge/Experiment%20Tracking-W%26B-orange)](https://api.wandb.ai/links/models-queen-s-university/6f2t0db2)
 
