@@ -366,4 +366,4 @@ gantt
 }
 ```
 
-Licensed under the [MIT License](LICENSE).
+Licensed under the [MIT License](LICENSE) & [License]([LICENSE](https://librechat.queensu.ca/c/53ffab2c-7b2e-4ccb-8df6-ebea17af5321)).
