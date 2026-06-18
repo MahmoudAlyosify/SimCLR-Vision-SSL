@@ -365,5 +365,4 @@ gantt
   year      = {2020}
 }
 ```
-
-Licensed under the [MIT License](LICENSE) &  [![W](https://librechat.queensu.ca/c/53ffab2c-7b2e-4ccb-8df6-ebea17af5321)](https://api.wandb.ai/links/models-queen-s-university/6f2t0db2](https://librechat.queensu.ca/c/53ffab2c-7b2e-4ccb-8df6-ebea17af5321))
+Licensed under the [MIT License](LICENSE) & [W](https://librechat.queensu.ca/c/53ffab2c-7b2e-4ccb-8df6-ebea17af5321)
