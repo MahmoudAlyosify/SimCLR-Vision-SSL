@@ -365,4 +365,4 @@ gantt
   year      = {2020}
 }
 ```
-Licensed under the [MIT License](LICENSE) & [W](https://librechat.queensu.ca/c/53ffab2c-7b2e-4ccb-8df6-ebea17af5321)
+Licensed under the [MIT License](LICENSE) 
